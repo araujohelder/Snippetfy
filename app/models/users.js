@@ -4,5 +4,9 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
   });
+
+  User.associate = (models) => {
+    User.hasMany(models.Category);
+  };
   return User;
 };
